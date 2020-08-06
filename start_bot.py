@@ -19,7 +19,8 @@
 
 # Modify this file if you want a different startup sequence, for example using
 # a Webhook
+import os
 
-
-def start_bot(updater):
-    updater.start_polling()
+def start_bot(updater, token):
+    PORT = int(os.environ.get('PORT', '8443'))
+    updater.start_webhook(listen='0.0.0.0', port=PORT, url_path="https://roz-unobot.herokuapp.com/" + token)
