@@ -19,6 +19,7 @@
 
 
 import json
+import os
 
 with open("config.json","r") as f:
     config = json.loads(f.read())
