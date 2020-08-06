@@ -25,4 +25,4 @@ def start_bot(updater, token):
     URL = "https://roz-unobot.herokuapp.com/" + token
     PORT = int(os.environ.get('PORT', '8443'))
     updater.bot.set_webhook(URL)
-    updater.start_webhook(listen='0.0.0.0', port=PORT, url_path=URL)
+    updater.start_webhook(listen='0.0.0.0', port=PORT, url_path=token)
