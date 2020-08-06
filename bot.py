@@ -30,7 +30,7 @@ import card as c
 import settings
 import simple_commands
 from actions import do_skip, do_play_card, do_draw, do_call_bluff, start_player_countdown
-from config import WAITING_TIME, DEFAULT_GAMEMODE, MIN_PLAYERS
+from config import WAITING_TIME, DEFAULT_GAMEMODE, MIN_PLAYERS, TOKEN
 from errors import (NoGameInChatError, LobbyClosedError, AlreadyJoinedError,
                     NotEnoughPlayersError, DeckEmptyError)
 from internationalization import _, __, user_locale, game_locales
@@ -740,5 +740,5 @@ settings.register()
 dispatcher.add_handler(MessageHandler(Filters.status_update, status_update))
 dispatcher.add_error_handler(error)
 
-start_bot(updater)
+start_bot(updater, TOKEN)
 updater.idle()
